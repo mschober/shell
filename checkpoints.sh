@@ -71,6 +71,11 @@ Example Usages:
     return 0
 }
 
+function go2(){
+  gock $@
+}
+
+
 function ckck {
     (
     printf "Matching checkpoints:\n"
@@ -143,3 +148,4 @@ complete -F _.._completion ..
 complete -F _ck_completion delck
 complete -F _ck_completion ckck
 complete -F _ck_completion gock
+complete -F _ck_completion go2
