@@ -3,22 +3,8 @@ export CKDEFAULT_TAG=${CKDEFAULT_TAG-default}
 export CKBOUNCE_TAG=${CKBOUNCE_TAG-bounce}
 mkdir -p $CKDIR
 
-
-function ck {
-    local TAG=${1-$CKDEFAULT_TAG}
-    local TAG_CONTENTS=${2-"$PWD"}
-    
-
-    if [ -d "$TAG_CONTENTS" ]; then
-        TAG_CONTENTS=`cd "$TAG_CONTENTS" && echo "$PWD"`;
-        echo "$TAG_CONTENTS" > "$CKDIR/$TAG"
-        echo "Checkpoint ($TAG) = $TAG_CONTENTS"
-        return 0
-    else
-        echo "Unable to find directory $TAG_CONTENTS";
-        return 1
-    fi
-}
+source $HOME/functions/ck.func
+export -f ck
 
 function gock {
     local TAG=${1-$CKDEFAULT_TAG}
