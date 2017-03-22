@@ -3,7 +3,7 @@ export CKDEFAULT_TAG=${CKDEFAULT_TAG-default}
 export CKBOUNCE_TAG=${CKBOUNCE_TAG-bounce}
 mkdir -p $CKDIR
 
-source $HOME/functions/ck.func
+source $BASH_HOME/functions/ck.func
 export -f ck
 
 function gock {
